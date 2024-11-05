@@ -1,0 +1,65 @@
+---
+lg: pt
+format: 
+  beamer:
+    navigation: horizontal
+    theme: "CambridgeUS"
+    colortheme: "beaver"
+    fonttheme: "structurebold"
+    header-includes: |
+      \titlegraphic{\includegraphics[width=0.4\paperwidth]{figure/Ensp.png}}
+title: "Seminários de Epidemiologia das Doenças Transmissíveis - Controle de infecções com vacinação e hesitação vacinal"
+author: Karla Ferreira
+date: "07-11-2024 "
+---
+
+## Artigo
+
+```{r, echo=FALSE, fig.cap="", out.width='90%', fig.align='center'}
+knitr::include_graphics("figure/artigo.jpg")
+```
+
+## Introdução
+ - A recusa e o atraso vacinal estão contribuindo para o aumento de surtos de doenças evitáveis por vacinação em todo o mundo.
+ - Em 2019 a **hesitação vacinal** foi designada pela OMS como uma das dez principais ameaças à saúde global. 
+ - Junto a questões de acesso que ainda persistem, há evidências na literatura de que a recusa e o atraso vacinal ocorrem devido à **falta de confiança na importância, segurança e efetividade das vacinas**.
+ - Vaccine Confidence Project (VCP) desenvolveu o Vaccine Confidence Index (VCI), uma ferramenta usada para monitorar
+tendências espaço-temporais na confiança nas vacinas a nível nacional e global. 
+- **Objetivo:** Fornecer estimativas plurianuais em nível global de confiança de vacinas de 149 países em todo o mundo, explorando tendências na confiança e os determinantes globais da aceitação, incluindo determinantes socioeconômicos e fontes de confiança.
+
+## Métodos
+
+ - Entre setembro de 2015 e dezembro de 2019, foram coletados dados de 284.381 indivíduos maiores de 17 anos de 149 países (290 pesquisas nacionais representativas - sexo, idade e regiões com média de 1000 indivíduos).
+ 
+ - Filipinas foi pesquisada seis vezes no período, 13 países foram pesquisados em 4 pontos do tempo, 28 em três pontos, 40 em dois pontos e 67 em um ponto no tempo. 
+ 
+ - A confiança nas vacinas foi medida por meio de três afirmações sobre importância, segurança e efetividade das vacinas (VCI): em geral, penso que é importante que as crianças tomem vacinas; no geral, penso que as vacinas são seguras; no geral, penso que as vacinas são efetivas;
+ 
+ - Respostas em escala Likert - "discordo totalmente" a "concordo totalmente"
+ 
+## Métodos
+
+ **Diferença entre as pesquisas:** presencial, por telefone e on-line.
+ 
+ - Categorias intermediárias da escala Likert foram reclassificadas em “nem concordo totalmente e nem discordo totalmente”.
+ 
+ - A suposição é que aqueles que relatam as respostas mais extremas o farão independentemente de uma categoria adicional “nem concordo nem discordo” e nem uma mudança de redação de “um pouco” para “tende a” na categoria adjacente categorias.
+ 
+ - 144 pesquisas foram feitas pela Wellcome Global Monitor (WGM) e incluíam dados sobre fontes de confiança, comportamento acerca de busca de informação e para aqueles que tinham crianças, se ao menos uma tinha sido vacinada em alguma campanha de imunização.
+ 
+ - Para analisar barreiras à adoção de vacinas além desses, também foram extraídos dados demográficos e socioeconômicos das pesquisas WGM.
+ 
+## Métodos - Confiança nas vacinas
+
+## Métodos - Determinantes da adocão de vacinas
+ 
+## Resultados
+```{r, echo=FALSE, fig.cap="Global trends in perceptions towards the safety of vaccines in November, 2015, and November, 2018", out.width='60%', fig.align='center'}
+knitr::include_graphics("figure/global_map.jpg")
+```
+ 
+
+## Resultados
+```{r, echo=FALSE, fig.cap="Distributions in absolute confidence changes between November, 2015, and December, 2019", out.width='45%', fig.align='center'}
+knitr::include_graphics("figure/abs_change.jpg")
+```
