@@ -3,6 +3,7 @@ lg: pt
 format: 
   beamer:
     navigation: horizontal
+    #slide-level: 2
     theme: "CambridgeUS"
     colortheme: "beaver"
     fonttheme: "structurebold"
@@ -13,35 +14,36 @@ author: Karla Ferreira
 date: "07-11-2024 "
 ---
 
-## Artigo
+# Artigo
 
-```{r, echo=FALSE, fig.cap="", out.width='90%', fig.align='center'}
+```{r, echo=FALSE, fig.cap="", out.width='80%', fig.align='center'}
 knitr::include_graphics("figure/artigo.jpg")
 ```
 
-## Introdução
+# Introdução
+
  - A recusa e o atraso vacinal estão contribuindo para o aumento de surtos de doenças evitáveis por vacinação em todo o mundo.
  - Em 2019 a **hesitação vacinal** foi designada pela OMS como uma das dez principais ameaças à saúde global. 
  - Junto a questões de acesso que ainda persistem, há evidências na literatura de que a recusa e o atraso vacinal ocorrem devido à **falta de confiança na importância, segurança e efetividade das vacinas**.
  - Vaccine Confidence Project (VCP) desenvolveu o Vaccine Confidence Index (VCI), uma ferramenta usada para monitorar
 tendências espaço-temporais na confiança nas vacinas a nível nacional e global. 
-- **Objetivo:** Fornecer estimativas plurianuais em nível global de confiança de vacinas de 149 países em todo o mundo, explorando tendências na confiança e os determinantes globais da aceitação, incluindo determinantes socioeconômicos e fontes de confiança.
+- **Objetivo:** Fornecer estimativas plurianuais em nível global sobre **confiança em vacinas** de 149 países em todo o mundo, explorando tendências na confiança e os determinantes globais da **aceitação**, incluindo determinantes socioeconômicos e fontes de confiança.
 
-## Métodos
+# Métodos
 
  - Entre setembro de 2015 e dezembro de 2019, foram coletados dados de 284.381 indivíduos maiores de 17 anos de 149 países (290 pesquisas nacionais representativas - sexo, idade e regiões com média de 1000 indivíduos).
  
  - Filipinas foi pesquisada seis vezes no período, 13 países foram pesquisados em 4 pontos do tempo, 28 em três pontos, 40 em dois pontos e 67 em um ponto no tempo. 
  
- - A confiança nas vacinas foi medida por meio de três afirmações sobre importância, segurança e efetividade das vacinas (VCI): em geral, penso que é importante que as crianças tomem vacinas; no geral, penso que as vacinas são seguras; no geral, penso que as vacinas são efetivas;
+ - A confiança nas vacinas foi medida por meio de três afirmações sobre importância, segurança e efetividade das vacinas (VCI): em geral, penso que é importante que as crianças tomem vacinas; no geral, penso que as vacinas são seguras; no geral, penso que as vacinas são efetivas.
  
- - Respostas em escala Likert - "discordo totalmente" a "concordo totalmente"
+ - Respostas em escala Likert - "discordo totalmente" a "concordo totalmente".
  
-## Métodos
+# Métodos
 
  **Diferença entre as pesquisas:** presencial, por telefone e on-line.
  
- - Categorias intermediárias da escala Likert foram reclassificadas em “nem concordo totalmente e nem discordo totalmente”.
+ - Categorias intermediárias da escala Likert foram reclassificadas em “nem concordo fortemente e nem discordo totalmente”.
  
  - A suposição é que aqueles que relatam as respostas mais extremas o farão independentemente de uma categoria adicional “nem concordo nem discordo” e nem uma mudança de redação de “um pouco” para “tende a” na categoria adjacente categorias.
  
@@ -49,17 +51,111 @@ tendências espaço-temporais na confiança nas vacinas a nível nacional e glob
  
  - Para analisar barreiras à adoção de vacinas além desses, também foram extraídos dados demográficos e socioeconômicos das pesquisas WGM.
  
-## Métodos - Confiança nas vacinas
+# Métodos
 
-## Métodos - Determinantes da adocão de vacinas
+```{r, echo=FALSE, fig.cap="", out.width='70%', fig.align='center'}
+knitr::include_graphics("figure/questions.png")
+```
+
  
-## Resultados
+# Métodos - Confiança nas vacinas
+
+ - A proporção de entrevistados de cada uma das categorias, para cada uma das afirmações de confiança, em cada país e em cada ponto no tempo foi modelada como processo logit multinomial gaussiano com inferência via Gibbs sampling (MCMC) com 10.000 amostras da distribuição preditiva posterior.
+ 
+ - Performance dos modelos foi avaliada com amostras de validação com validação cruzada (5-fold) com bom ajuste.   
+ 
+ - Modelo foi usado para estimar confiança em todos os países em dois momentos (novembro de 2015 e novembro de 2018).
+ 
+ - Para avaliar tendências mais recentes, foram estimadas mudanças nas estimativas de confiança entre novembro de 2015 e dezembro de 2019.
+ 
+
+# Métodos - Adoção de vacinas (WGM)
+
+ - Determinantes: Regressão logística bayeseanas univariadas para investigar a associação entre adesão à vacina e confiança, fonte de confiança, comportamento quanto à busca de informações e fatores demográficos e socioeconômicos.
+ 
+ - Análise de adesão: incluídos os respondentes WGM que relataram ter ouvido sobre vacinas e ter filhos. A força da relação entre a porcentagem que concorda fortemente que vacinas são importantes, seguras e eficazes e a porcentagem que relata ter vacinado seus filhos foi avaliada pelo coeficiente de correlação de Pearson.
+ 
+ - Modelos implementados em JAGS (Just Another Gibbs Sampler -  Bayesian hierarchical models using Markov Chain Monte Carlo simulation). Intervalos HPD 95% (Highest posterior density) foram usados para representar a incerteza das estimativas dos parâmetros.
+ 
+
+# Resultados - confiança
 ```{r, echo=FALSE, fig.cap="Global trends in perceptions towards the safety of vaccines in November, 2015, and November, 2018", out.width='60%', fig.align='center'}
 knitr::include_graphics("figure/global_map.jpg")
 ```
  
-
-## Resultados
+# Resultados - confiança
+ 
+ - Argentina, Liberia e Bangladesh tiveram a maior proporção estimada de respondentes que concordam fortemente que as vacinas são seguras em nov. 2015, enquanto Japão, França e Mogolia tiveram a menor.
+ 
+ - Etiópia, Argentina e Bangladesh tiveram a maior proporção estimada dos que concordam fortemente que vacinas são importantes em 2015, enquanto a Turquia, Marrocos e Georgia tiveram a menor.
+ 
+ - Etiópia, Argentina e Mauritânia tiveram a maior proporção estimada dos que concordam fortementeque vacinas são efetivas em 2015, enquanto Japão, Mongolia e Marrocos tiveram a menor.
+ 
+ - Em dez países o modelo estimou uma proporção maior de entrevistados em 2019 discordando fortemente que as vacinas são seguras, importantes ou efetivas comparado a 2015 (Afeganistão, Azerbaijão, Bósnia e Herzegovina, Geórgia, Indonésia, Japão, Malásia, Nigéria, Paquistão e Sérvia.)
+ 
+ - Brasil: **segurança** em 2015 73.08% (71.15–75.01) e em 2019 63.32% (30.06–85.71); **importância** em 2015 92.87% (91.62–93.93) e em 2019 88.29% (70.28–98.45); **efetividade** em 2015 75.63% (73.98–77.51) e em 2019 55.93% (25.84–87.59). 
+ 
+ 
+# Resultados - mudança na confiança
 ```{r, echo=FALSE, fig.cap="Distributions in absolute confidence changes between November, 2015, and December, 2019", out.width='45%', fig.align='center'}
 knitr::include_graphics("figure/abs_change.jpg")
 ```
+
+# Resultados - mudança na confiança
+
+ - Entre novembro de 2015 e dezembro de 2019 a confiança nas vacinas caiu nas três dimensões de confiança na Indonésia, Filipinas, Paquistão e Coreia do Sul e em duas dimensões no Afeganistão e Vietnã.
+ 
+ - A confiança em vacinas aumentou entre 2015 e 2019 nas três dimensões na França, Índia, México, Romenia e Tailândia.
+ 
+ 
+# Resultados - tendência temporal confiança
+```{r, echo=FALSE, fig.cap="Trends in the perceived safety of vaccines in the EU and the Philippines", out.width='60%', fig.align='center'}
+knitr::include_graphics("figure/trends_EU.jpg")
+```
+
+# Resultados - determinantes da adoção
+```{r, echo=FALSE, fig.cap="Univariate determinants of vaccine uptake within the Wellcome Global Monitor dataset", out.width='30%', fig.align='center'}
+knitr::include_graphics("figure/univariate_det.jpg")
+```
+
+# Resultados - determinantes associados à melhor adoção
+
+ - Alta confiança em vacinas (66 países); 
+ - Confiar nos profissionais de saúde mais do que família, amigos ou outras fontes não médicas para aconselhamento médico e de saúde (43 países);
+ - Níveis de educação mais alto (35 países); 
+  - Sexo, com mulheres mais propensas do que os homens a relatar criança tendo pelo menos uma vacina em 41 países os homens mais propensos
+do que as mulheres em apenas um país ; 
+ - Idade (faixas etárias mais jovens com maiores probabilidade de aceitação em 43 países); 
+ - Comportamento de alta busca de informações (18 países). 
+
+
+# Resultados - correlação entre adoção e confiança
+```{r, echo=FALSE, fig.cap="Association between national level vaccine uptake and vaccine confidence as reported in the WGM", out.width='100%', fig.align='center'}
+knitr::include_graphics("figure/association.jpg")
+```
+
+# Resultados - correlação entre adoção e confiança
+
+ - Países com porcentagens mais elevadas de entrevistados concordando fortemente que as vacinas são seguras, importantes e efetivas tiveram porcentagens mais altas de entrevistados relatando que seus filhos foram vacinados.
+ 
+ - Correlação de Pearson de 0,28 (IC 95% 0,12–0,42) entre proporção que concordam fortemente que vacinas são seguras e proporção que relatou ter vacinado seus filhos.
+ 
+ - Correlação de Pearson de 0,45 (0,31–0,57) para a importância da vacina
+e adoção, e 0,28 (0,12–0,42) para efetividade da vacina e adoção.
+ 
+# Discussão - limitações
+ 
+ - Suposição fundamental de que os respondentes das categorias extremas não mudariam suas respostas com categorias adicionais.
+ - Análise de adesão baseada na vacinação de pelo menos um dos filhos, impedindo uma investigação determinantes da adesão específica de cada tipo de vacina ou específica de cada criança.
+ - Confiança que a lembrança dos pais seja precisa, e padrões viés de recordação não variam substancialmente entre países.
+ - Baixo número de entrevistados que reportaram não vacinarem seus filhos e grande variedade de grupos religiosos (recodificados como maioritário e minoritários) nas regressões.
+ 
+# Discussão
+ 
+ - Maior estudo confiança em vacinas, oferecendo informações importantes estado de confiança na vacina em nível global.
+ - O declínio de confiança no Afeganistão, Azerbaijão, Paquistão e
+e Nigéria reflecte tendências de instabilidade política e religiosa extremismo nestes locais.
+ - Pesquisas devem investigar a ligação entre polarização política, extremismo religioso, e populismo e crenças de vacinação para elucidar esses laços complexos.
+ - Fornece uma baseline valioso sobre níveis de confiança para avaliação de mudanças no tempo numa época em que vivemos sob ameaças de doenças e que ajuda a identificar onde é necessária mais construção de confiança para otimizar a aceitação de novas vacinas que salvam vidas.
+ 
+ 
